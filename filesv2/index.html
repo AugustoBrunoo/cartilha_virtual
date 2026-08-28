@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proteção, Afeto e Diálogo — Guia de Educação Sexual Preventiva</title>
+<meta name="description" content="Guia interativo de educação sexual preventiva e proteção à criança e ao adolescente, para pais, mães e educadores.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Reading progress bar -->
+<div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- Floating glass navbar -->
+<header class="navbar" id="navbar">
+  <a href="#hero" class="nav-brand">
+    <span class="nav-brand-mark" aria-hidden="true"></span>
+    Proteção &amp; Diálogo
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#secao1" data-nav="secao1">Entenda</a>
+    <a href="#secao2" data-nav="secao2">Guia Prático</a>
+    <a href="#secao3" data-nav="secao3">Rede de Apoio</a>
+    <a href="#secao4" data-nav="secao4">Canais &amp; Créditos</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Emergency FAB -->
+<div class="fab-wrap">
+  <button class="fab" id="fabBtn" aria-haspopup="dialog" aria-label="Canais de emergência">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4.5 8-11.8V5l-8-3-8 3v5.2C4 17.5 12 22 12 22Z" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 12.2l1.8 1.8 3.2-3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <span class="fab-label">Preciso de ajuda</span>
+</div>
+
+<!-- Emergency modal -->
+<div class="modal-overlay" id="emergencyModal" role="dialog" aria-modal="true" aria-labelledby="emergencyTitle">
+  <div class="modal-card modal-card--emergency">
+    <button class="modal-close" id="emergencyClose" aria-label="Fechar">✕</button>
+    <h3 id="emergencyTitle">Canais de emergência</h3>
+    <p>Se uma criança ou adolescente corre risco agora, ligue:</p>
+    <div class="emergency-buttons">
+      <a href="tel:100" class="tel-btn tel-btn--indigo">
+        <span class="tel-num">100</span>
+        <span class="tel-desc">Direitos Humanos — nacional, gratuito, 24h e anônimo</span>
+      </a>
+      <a href="tel:190" class="tel-btn tel-btn--red">
+        <span class="tel-num">190</span>
+        <span class="tel-desc">Polícia Militar — emergência ou flagrante</span>
+      </a>
+    </div>
+    <a href="#secao4" class="modal-link" id="emergencySeeMore">Ver todos os canais de apoio →</a>
+  </div>
+</div>
+
+<!-- Body-zone info modal -->
+<div class="modal-overlay" id="bodyModal" role="dialog" aria-modal="true" aria-labelledby="bodyModalTitle">
+  <div class="modal-card">
+    <button class="modal-close" id="bodyModalClose" aria-label="Fechar">✕</button>
+    <h3 id="bodyModalTitle">Esta é uma área privada!</h3>
+    <p>Ninguém pode tocar, olhar, fotografar ou pedir para você mostrar, exceto em situações de higiene e cuidados médicos acompanhados pelos pais.</p>
+    <p class="modal-note">Seu corpo, suas fotos e sua intimidade pertencem apenas a você. Ninguém tem o direito de exigir exposição ou toques em troca de afeto, atenção, presentes ou popularidade.</p>
+  </div>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-blob hero-blob--1" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob--2" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="eyebrow" data-reveal>Guia para famílias e educadores</p>
+      <h1 class="hero-title" data-reveal>Proteção, Afeto e Diálogo:<br><span>o direito de crescer em segurança</span></h1>
+      <p class="hero-text" data-reveal>
+        Bem-vindo(a)! Falar sobre corpo, sentimentos, limites e desenvolvimento com crianças e adolescentes
+        não é apenas um ato educativo: é uma estratégia de amor, proteção e cuidado. Este guia foi
+        desenvolvido para apoiar pais, mães, educadores e responsáveis na construção de um diálogo aberto
+        e sem tabus. Nosso objetivo é transformar a informação em uma barreira de proteção para que nossos
+        meninos e meninas cresçam conscientes de seus direitos, seguros e preparados para reconhecer e
+        comunicar situações de risco em qualquer fase da vida.
+      </p>
+      <a href="#secao1" class="btn btn--primary" data-reveal>Começar a leitura</a>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 1 -->
+  <section class="section" id="secao1">
+    <div class="section-inner">
+      <p class="section-eyebrow">Seção 1</p>
+      <h2 class="section-title">O que você precisa saber sobre educação sexual preventiva</h2>
+
+      <!-- 1. Diferença fundamental -->
+      <div class="block" data-reveal-group>
+        <blockquote class="pull-quote" data-reveal>
+          “Educação sexual <strong>NÃO</strong> é sobre ato sexual. É sobre sexualidade, saúde e autoproteção.”
+        </blockquote>
+
+        <div class="compare-grid">
+          <div class="spot-card" data-spotlight>
+            <div class="spot-card-inner">
+              <h3>Sexo</h3>
+              <ul>
+                <li>Anatomia e órgãos genitais.</li>
+                <li>Aspectos biológicos.</li>
+                <li>Relação e ato sexual.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="spot-card spot-card--accent" data-spotlight>
+            <div class="spot-card-inner">
+              <h3>Sexualidade</h3>
+              <ul>
+                <li>Dimensão central e natural do ser humano.</li>
+                <li>Como a pessoa pensa, sente, age e interage.</li>
+                <li>Afeto, respeito, limites, intimidade e busca por bem-estar em todas as áreas.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Perguntas e respostas -->
+      <div class="block">
+        <h3 class="block-title">O que é — e o que não é</h3>
+        <div class="accordion" data-accordion>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="true">
+              <span>O que é Educação Sexual Preventiva?</span>
+              <span class="accordion-icon">＋</span>
+            </button>
+            <div class="accordion-panel">
+              <p>Ensinar sobre anatomia com nomes corretos, desenvolver a noção de privacidade, ensinar a
+                dizer “NÃO” a toques desconfortáveis, prevenir violências e construir pontes de confiança
+                entre os filhos e adultos seguros.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span>O que não é Educação Sexual Preventiva?</span>
+              <span class="accordion-icon">＋</span>
+            </button>
+            <div class="accordion-panel">
+              <p>Erotização precoce, exposição a conteúdos inadequados ou antecipação de etapas do
+                desenvolvimento.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formas de abuso -->
+      <div class="block">
+        <h3 class="block-title">Formas de abuso, violência e contextos de risco</h3>
+        <p class="block-lead"><strong>O que é Abuso Sexual Infantil e Juvenil?</strong> Toda ação que utiliza a
+          vulnerabilidade de uma criança ou adolescente para fins sexuais, presencialmente ou por meios
+          eletrônicos, caracterizando sempre uma relação desigual de poder e a exploração do desenvolvimento
+          da vítima.</p>
+
+        <div class="tilt-grid">
+          <div class="tilt-card" data-tilt>
+            <div class="tilt-icon">✋</div>
+            <h4>Abuso com contato físico</h4>
+            <p>Toques em partes íntimas, beijos forçados, jogos sexuais ou qualquer prática física não
+              consentida/inadequada.</p>
+          </div>
+          <div class="tilt-card" data-tilt>
+            <div class="tilt-icon">👁️</div>
+            <h4>Abuso sem contato físico</h4>
+            <p>Exposição à nudez ou pornografia, comentários de teor sexual, voyeurismo e solicitações
+              para envio de fotos/vídeos despidos.</p>
+          </div>
+          <div class="tilt-card" data-tilt>
+            <div class="tilt-icon">📱</div>
+            <h4>Violência e exploração digital (Grooming)</h4>
+            <p>Aliciamento online através de redes sociais, jogos virtuais e aplicativos de mensagens para
+              chantagem, extorsão ou obtenção de arquivos íntimos.</p>
+          </div>
+          <div class="tilt-card" data-tilt>
+            <div class="tilt-icon">💬</div>
+            <h4>Violência emocional e negligência</h4>
+            <p>Ameaças, chantagens emocionais (“nosso segredinho”) e isolamento promovido pelo agressor
+              para silenciar a vítima.</p>
+          </div>
+        </div>
+
+        <div class="tag-row">
+          <span class="tag">Intrafamiliar</span>
+          <span class="tag">Extrafamiliar / Institucional / Comunitário</span>
+          <span class="tag">Digital</span>
+        </div>
+        <p class="tag-caption">Praticado por membros da própria família ou residentes da casa; por pessoas
+          conhecidas, figuras de autoridade, líderes, cuidadores ou amigos da família; ou no ambiente
+          cibernético e redes sociais.</p>
+      </div>
+
+      <!-- Mitos e realidades -->
+      <div class="block">
+        <h3 class="block-title">Desmistificando a violência: mitos e realidades</h3>
+        <p class="block-lead">Clique em cada card para revelar a realidade por trás do mito.</p>
+        <div class="flip-grid">
+          <div class="flip-card" tabindex="0" role="button" aria-label="Virar card">
+            <div class="flip-card-inner">
+              <div class="flip-face flip-front">
+                <span class="flip-tag flip-tag--myth">MITO</span>
+                <p>Abusadores são estranhos e monstros facilmente identificáveis.</p>
+                <span class="flip-hint">Ver realidade →</span>
+              </div>
+              <div class="flip-face flip-back">
+                <span class="flip-tag flip-tag--real">REALIDADE</span>
+                <p>Cerca de <strong>85% a 90%</strong> dos abusadores são pessoas conhecidas e de confiança
+                  da família ou da vítima.</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card" tabindex="0" role="button" aria-label="Virar card">
+            <div class="flip-card-inner">
+              <div class="flip-face flip-front">
+                <span class="flip-tag flip-tag--myth">MITO</span>
+                <p>Só meninas sofrem abuso.</p>
+                <span class="flip-hint">Ver realidade →</span>
+              </div>
+              <div class="flip-face flip-back">
+                <span class="flip-tag flip-tag--real">REALIDADE</span>
+                <p>Meninos e meninas correm risco. Estima-se que <strong>1 em cada 3 a 4 meninas</strong> e
+                  <strong>1 em cada 6 a 10 meninos</strong> sofram algum tipo de violência sexual.</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card" tabindex="0" role="button" aria-label="Virar card">
+            <div class="flip-card-inner">
+              <div class="flip-face flip-front">
+                <span class="flip-tag flip-tag--myth">MITO</span>
+                <p>Adolescentes não sofrem abuso porque sabem se defender.</p>
+                <span class="flip-hint">Ver realidade →</span>
+              </div>
+              <div class="flip-face flip-back">
+                <span class="flip-tag flip-tag--real">REALIDADE</span>
+                <p>Adolescentes enfrentam altos riscos de abuso e manipulação, especialmente no contexto
+                  digital e por figuras de autoridade, tendo muitas vezes sua condição de vítima
+                  desvalorizada ou culpabilizada.</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card" tabindex="0" role="button" aria-label="Virar card">
+            <div class="flip-card-inner">
+              <div class="flip-face flip-front">
+                <span class="flip-tag flip-tag--myth">MITO</span>
+                <p>Se não houve violência física, não é abuso.</p>
+                <span class="flip-hint">Ver realidade →</span>
+              </div>
+              <div class="flip-face flip-back">
+                <span class="flip-tag flip-tag--real">REALIDADE</span>
+                <p>Coerção psicológica, chantagem, exposição e manipulação online são formas graves de
+                  abuso sexual e geram profundos impactos emocionais.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pilares do consentimento -->
+      <div class="block">
+        <h3 class="block-title">Consentimento, limites e prevenção no dia a dia</h3>
+        <p class="block-subtitle">Os pilares do consentimento e dos limites do corpo</p>
+        <ol class="pillar-list">
+          <li><span class="pillar-num">1</span><div><strong>Autonomia Corporal:</strong> ensinar desde cedo
+            que o corpo pertence à criança/adolescente (“Meu corpo, meu espaço”).</div></li>
+          <li><span class="pillar-num">2</span><div><strong>Ausência de Coação:</strong> consentimento sob
+            ameaça, manipulação, chantagem ou desigualdade de autoridade nunca é válido.</div></li>
+          <li><span class="pillar-num">3</span><div><strong>Consentimento Contínuo e Revogável:</strong>
+            dizer “sim” uma vez não significa autorização permanente; a pessoa tem o direito de mudar de
+            ideia a qualquer momento.</div></li>
+          <li><span class="pillar-num">4</span><div><strong>Capacidade de Compreensão:</strong> menores de
+            14 anos não possuem capacidade legal e maturidade emocional para consentir atos sexuais perante
+            a lei.</div></li>
+        </ol>
+
+        <p class="block-subtitle">Checklist familiar — como aplicar a prevenção na rotina</p>
+        <ul class="checklist" data-checklist>
+          <li class="checklist-item">
+            <button class="checklist-check" aria-pressed="false" aria-label="Marcar item"></button>
+            <div><strong>Nomes reais para o corpo:</strong> nomeie as partes íntimas com clareza
+              anatomicamente correta (sem apelidos pejorativos), permitindo relatos precisos caso algo
+              aconteça.</div>
+          </li>
+          <li class="checklist-item">
+            <button class="checklist-check" aria-pressed="false" aria-label="Marcar item"></button>
+            <div><strong>Respeite a vontade do seu filho:</strong> não force crianças ou adolescentes a
+              abraçarem ou beijarem parentes/conhecidos contra a vontade. Ensine que o afeto é voluntário.</div>
+          </li>
+          <li class="checklist-item">
+            <button class="checklist-check" aria-pressed="false" aria-label="Marcar item"></button>
+            <div><strong>Construa um ambiente de acolhimento:</strong> garanta que seu filho saiba que pode
+              contar qualquer assunto sem medo de ser punido, julgado ou desacreditado.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 2 -->
+  <section class="section section--alt" id="secao2">
+    <div class="section-inner">
+      <p class="section-eyebrow">Seção 2</p>
+      <h2 class="section-title">Guia prático de proteção</h2>
+
+      <!-- 2.1 Corpo e limites -->
+      <div class="block">
+        <h3 class="block-title">Conhecendo o próprio corpo e estabelecendo limites</h3>
+        <p class="block-lead"><strong>Nomear para proteger:</strong> ensinar o nome correto das partes do
+          corpo (como vulva, pênis, ânus e nádegas) sem apelidos pejorativos ou tabus é o primeiro passo
+          para a autoproteção. A clareza na linguagem permite que crianças e adolescentes consigam relatar
+          com precisão qualquer desconforto ou agressão sofrida.</p>
+
+        <p class="game-instructions">Toque nas áreas destacadas da ilustração para saber o que é uma área
+          privada.</p>
+        <div class="body-game" id="bodyGame">
+          <svg viewBox="0 0 240 380" class="body-figure" aria-hidden="true">
+            <ellipse cx="120" cy="46" rx="34" ry="38" fill="var(--skin)"/>
+            <rect x="92" y="80" width="56" height="70" rx="20" fill="var(--skin)"/>
+            <rect x="70" y="145" width="100" height="90" rx="26" fill="var(--suit)"/>
+            <rect x="60" y="150" width="30" height="110" rx="14" fill="var(--skin)"/>
+            <rect x="150" y="150" width="30" height="110" rx="14" fill="var(--skin)"/>
+            <rect x="86" y="225" width="30" height="120" rx="14" fill="var(--skin)"/>
+            <rect x="124" y="225" width="30" height="120" rx="14" fill="var(--skin)"/>
+            <rect x="80" y="330" width="40" height="18" rx="8" fill="var(--suit-dark)"/>
+            <rect x="120" y="330" width="40" height="18" rx="8" fill="var(--suit-dark)"/>
+            <rect x="82" y="160" width="76" height="46" rx="16" fill="var(--suit-dark)" class="zone zone--private" data-zone="chest" tabindex="0" role="button" aria-label="Área privada: peito"/>
+            <rect x="86" y="210" width="68" height="34" rx="14" fill="var(--suit-dark)" class="zone zone--private" data-zone="hips" tabindex="0" role="button" aria-label="Área privada: quadril"/>
+          </svg>
+          <p class="game-caption">As áreas em destaque representam partes privadas — clique nelas.</p>
+        </div>
+      </div>
+
+      <!-- 2.2 Semáforo -->
+      <div class="block block--signature">
+        <h3 class="block-title">O semáforo do consentimento e dos toques</h3>
+        <p class="block-lead">Escolha um sinal para descobrir o que ele significa.</p>
+
+        <div class="semaphore" data-semaphore>
+          <div class="semaphore-panel">
+            <button class="semaphore-light semaphore-light--red" data-signal="red" aria-label="Sinal vermelho — perigo"></button>
+            <button class="semaphore-light semaphore-light--yellow" data-signal="yellow" aria-label="Sinal amarelo — atenção"></button>
+            <button class="semaphore-light semaphore-light--green" data-signal="green" aria-label="Sinal verde — permitido"></button>
+          </div>
+
+          <div class="semaphore-display" data-signal-panel="red">
+            <span class="semaphore-badge semaphore-badge--red">🔴 Sinal Vermelho — Perigo</span>
+            <h4>Toque inseguro / não permitido</h4>
+            <p><strong>O que significa:</strong> toques que geram dor, medo, vergonha ou confusão.</p>
+            <p><strong>Exemplos:</strong> pedidos de segredo sobre o próprio corpo, toques em partes
+              íntimas, chantagens para mostrar o corpo ou solicitação de fotos íntimas.</p>
+          </div>
+          <div class="semaphore-display is-hidden" data-signal-panel="yellow">
+            <span class="semaphore-badge semaphore-badge--yellow">🟡 Sinal Amarelo — Atenção</span>
+            <h4>Respeite os limites</h4>
+            <p><strong>O que significa:</strong> ações que parecem afeto, mas que causam desconforto quando
+              ultrapassam a vontade da pessoa.</p>
+            <p><strong>Exemplos:</strong> abraços forçados, cosquinhas em excesso que continuam após
+              pedidos de “pare”, comentários invasivos sobre a aparência física ou abordagens persistentes
+              de estranhos na internet.</p>
+          </div>
+          <div class="semaphore-display is-hidden" data-signal-panel="green">
+            <span class="semaphore-badge semaphore-badge--green">🟢 Sinal Verde — Permitido</span>
+            <h4>Toque seguro e saudável</h4>
+            <p><strong>O que significa:</strong> demonstrações espontâneas e voluntárias de carinho e
+              respeito mútuo.</p>
+            <p><strong>Exemplos:</strong> aperto de mão, abraço e beijo respeitosos e consentidos, e
+              procedimentos de saúde realizados por profissionais acompanhados de responsáveis legais.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.3 Sinais de alerta -->
+      <div class="block">
+        <h3 class="block-title">Identificando sinais de alerta</h3>
+        <div class="notice-box">
+          <strong>Aviso importante:</strong> os sinais abaixo são pontos de atenção e devem ser observados
+          em conjunto, considerando mudanças repentinas no comportamento habitual do filho(a). A presença de
+          um sinal isolado não significa um diagnóstico definitivo. Este é um guia informativo de proteção.
+          Em caso de suspeita, procure orientação técnica especializada ou os canais de apoio.
+        </div>
+
+        <div class="tabs" data-tabs>
+          <div class="tabs-nav">
+            <button class="tab-btn is-active" data-tab="fisicos">Sinais Físicos</button>
+            <button class="tab-btn" data-tab="cognitivos">Sinais Cognitivos</button>
+            <button class="tab-btn" data-tab="emocionais">Sinais Emocionais</button>
+            <span class="tab-indicator" data-tab-indicator></span>
+          </div>
+
+          <div class="tab-panel is-active" data-tab-panel="fisicos">
+            <ul class="signal-list signal-list--red">
+              <li><strong>Alertas visíveis/ginecológicos:</strong> vermelhidão, dores, coceira, inchaço,
+                lesões, odores incomuns nas partes íntimas ou presenças de secreções/sêmen.</li>
+              <li><strong>Infecções recorrentes:</strong> aparecimento inexplicável de infecções urinárias,
+                digestivas ou Infecções Sexualmente Transmissíveis (ISTs).</li>
+              <li><strong>Marcas físicas e dores:</strong> hematomas ou traumas sem explicação clara
+                (especialmente em coxas, seios, nádegas e baixo ventre), dores no corpo frequentes e
+                distúrbios graves do sono/pesadelos.</li>
+            </ul>
+          </div>
+          <div class="tab-panel" data-tab-panel="cognitivos">
+            <ul class="signal-list signal-list--yellow">
+              <li><strong>Mudança no desempenho escolar:</strong> queda brusca no rendimento ou, no extremo
+                oposto, uma busca excessiva pela escola (transformando o ambiente escolar em um refúgio
+                para não ficar em casa).</li>
+              <li><strong>Perda de foco e memória:</strong> dificuldade marcante de atenção e concentração
+                na rotina (a mente fica ocupada tentando lidar com a situação de dor/medo).</li>
+              <li><strong>Fuga para a fantasia / negação:</strong> isolamento em “mundos irreais” como forma
+                de se distanciar da dor interna e da realidade.</li>
+            </ul>
+          </div>
+          <div class="tab-panel" data-tab-panel="emocionais">
+            <ul class="signal-list signal-list--blue">
+              <li><strong>Sentimentos intensos de ameaça:</strong> crises de ansiedade, medos sem motivo
+                aparente e constante preocupação de que “um segredo” seja descoberto.</li>
+              <li><strong>Vergonha e culpa:</strong> sentimento desproporcional de responsabilidade sobre o
+                que acontece, rejeição ao próprio corpo ou sensação de “não ter valor”.</li>
+              <li><strong>Alterações de humor e defesa:</strong> agressividade repentina, destruição de
+                objetos, raiva excessiva ou reações de Estresse Pós-Traumático (TEPT).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.4 Alerta digital -->
+      <div class="block">
+        <h3 class="block-title">Alerta digital: orientações para o mundo virtual</h3>
+        <div class="digital-card">
+          <p><strong>O que é Aliciamento Digital (Grooming)?</strong> É a aproximação de adultos
+            mal-intencionados que usam o ambiente virtual (jogos online, redes sociais) para ganhar a
+            confiança de crianças e adolescentes com o objetivo de obter fotos íntimas ou extorquir a
+            vítima.</p>
+          <p class="digital-subtitle">Dicas de segurança e proteção online</p>
+          <ol class="digital-list">
+            <li><strong>Privacidade de perfis:</strong> mantenha as redes sociais restritas apenas a amigos
+              conhecidos do mundo real.</li>
+            <li><strong>Cuidado com fotos e dados:</strong> nunca envie fotos em trajes íntimos, com o
+              uniforme da escola ou que mostrem a fachada da sua casa/endereço.</li>
+            <li><strong>Desconfie de facilidades:</strong> promessas de presentes em jogos, propostas para
+              carreira de modelo ou “oportunidades fáceis” oferecidas por desconhecidos são os principais
+              caminhos de abordagem.</li>
+            <li><strong>Respaldo legal:</strong> lembre-se de que a internet não é uma terra sem leis. A
+              legislação brasileira prevê mecanismos de proteção à privacidade e responsabiliza qualquer
+              violação de direitos de crianças e adolescentes no ambiente digital.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 3 -->
+  <section class="section" id="secao3">
+    <div class="section-inner">
+      <p class="section-eyebrow">Seção 3</p>
+      <h2 class="section-title">Rede de apoio, família e escola</h2>
+
+      <div class="block">
+        <h3 class="block-title">O papel da família na educação sexual preventiva</h3>
+        <p class="block-lead">A educação sexual preventiva começa em casa e vai muito além da prevenção de
+          violências. Ela é uma ferramenta de desenvolvimento integral que ensina sobre respeito,
+          responsabilidade, autoconhecimento e construção de vínculos saudáveis para toda a vida.</p>
+
+        <div class="split-grid">
+          <div class="split-col" data-reveal-left>
+            <h4>Benefícios no ambiente familiar</h4>
+            <ul class="dot-list">
+              <li><strong>Autoconhecimento e autoestima:</strong> ajuda crianças e adolescentes a
+                compreenderem as transformações do próprio corpo com naturalidade, segurança e sem
+                vergonha.</li>
+              <li><strong>Prevenção de relacionamentos abusivos:</strong> ensina desde cedo o que é
+                respeito mútuo, consentimento e reciprocidade, preparando jovens para identificar e
+                rejeitar dinâmicas tóxicas ou abusivas no futuro.</li>
+              <li><strong>Fortalecimento do vínculo familiar:</strong> transforma os pais e responsáveis na
+                principal fonte de informação confiável, evitando que dúvidas sobre corpo e afetividade
+                sejam sanadas na internet ou com fontes inadequadas.</li>
+              <li><strong>Construção de autonomia e limites:</strong> desenvolve a capacidade de dizer
+                “não” a pressões sociais, de pares ou de parceiros, fortalecendo a tomada de decisões
+                conscientes.</li>
+            </ul>
+          </div>
+          <div class="split-col" data-reveal-right>
+            <h4>Como praticar no cotidiano</h4>
+            <ul class="dot-list">
+              <li><strong>Naturalize as conversas:</strong> responda às dúvidas dos seus filhos com
+                honestidade e de acordo com a idade, sem demonstrar tabu ou punir a curiosidade natural.</li>
+              <li><strong>Valide emoções e sentimentos:</strong> ensine que todas as emoções são válidas e
+                que ninguém deve aceitar desconforto para agradar aos outros.</li>
+              <li><strong>Promova um ambiente de acolhimento:</strong> garanta que seu filho saiba que,
+                independentemente do erro ou da dúvida, a família é um porto seguro para o qual ele sempre
+                pode voltar.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="acolhimento-card">
+          <p class="acolhimento-title">Acolhimento em situações de risco ou suspeita</p>
+          <p class="acolhimento-sub">Caso uma linha de limite seja cruzada ou ocorra uma revelação</p>
+          <ol class="acolhimento-steps">
+            <li><strong>Escute com calma:</strong> mantenha a postura acolhedora, sem demonstrar pânico ou
+              julgamento.</li>
+            <li><strong>Reafirme a inocência da vítima:</strong> reforce que a responsabilidade pela
+              proteção é do adulto e que a criança/adolescente não tem culpa.</li>
+            <li><strong>Busque apoio técnico:</strong> utilize a rede pública de proteção para os
+              encaminhamentos necessários de saúde e suporte psicológico.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3 class="block-title">O papel da escola e dos profissionais da rede</h3>
+        <p class="block-lead">A instituição escolar vai além do ensino acadêmico: é um espaço privilegiado
+          para a promoção da saúde, do respeito às diferenças e da convivência comunitária. A educação
+          preventiva na escola fortalece a autonomia dos estudantes e complementa o diálogo iniciado na
+          família.</p>
+
+        <div class="school-grid">
+          <div class="school-card">
+            <p class="school-card-eyebrow">Ações práticas no ambiente escolar</p>
+            <ul class="dot-list">
+              <li><strong>Identificação precoce:</strong> educadores e equipes pedagógicas acompanham o
+                desenvolvimento diário e são fundamentais para notar mudanças súbitas de comportamento,
+                queda no rendimento ou sinais de isolamento.</li>
+              <li><strong>Projetos pedagógicos preventivos:</strong> promoção de palestras, rodas de
+                conversa e atividades sobre respeito ao corpo, bullying, segurança digital e limites
+                interpessoais.</li>
+              <li><strong>Canal seguro de escuta:</strong> a escola atua como um ponto de apoio em que
+                crianças e adolescentes encontram adultos de referência para tirar dúvidas ou pedir ajuda.</li>
+            </ul>
+          </div>
+          <div class="school-card">
+            <p class="school-card-eyebrow">Rede multiprofissional</p>
+            <ul class="dot-list">
+              <li><strong>Profissionais de saúde e psicologia:</strong> orientam sobre o desenvolvimento
+                biológico e emocional, oferecendo suporte preventivo para a saúde mental e acolhimento em
+                momentos de vulnerabilidade.</li>
+              <li><strong>Assistência Social (CRAS/CREAS) e Conselho Tutelar:</strong> atuam no
+                fortalecimento das famílias e no acompanhamento de situações de risco, garantindo que os
+                direitos de crianças e adolescentes sejam integralmente respeitados no território.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 4 -->
+  <section class="section section--emergency" id="secao4">
+    <div class="section-inner">
+      <p class="section-eyebrow section-eyebrow--light">Seção 4 · Bloco 1</p>
+      <h2 class="section-title section-title--light">Canais de orientação, atendimento e denúncia</h2>
+      <p class="section-lead section-lead--light">Guarde estes contatos. Em caso de dúvida, ligue — não é
+        preciso ter certeza para pedir orientação.</p>
+
+      <div class="channel-grid">
+        <a href="tel:100" class="channel-card channel-card--magnetic" data-magnetic>
+          <span class="channel-num">100</span>
+          <span class="channel-name">Direitos Humanos</span>
+          <span class="channel-desc">Nacional — gratuito, 24h e anônimo</span>
+        </a>
+        <a href="tel:190" class="channel-card channel-card--magnetic channel-card--red" data-magnetic>
+          <span class="channel-num">190</span>
+          <span class="channel-name">Polícia Militar</span>
+          <span class="channel-desc">Casos de emergência ou flagrante</span>
+        </a>
+        <div class="channel-card channel-card--info">
+          <span class="channel-name">Conselho Tutelar de Campo Grande</span>
+          <span class="channel-desc">Telefone, e-mail e endereço local — consulte a unidade mais próxima</span>
+          <button class="copy-btn" data-copy="Conselho Tutelar de Campo Grande">Copiar informações</button>
+        </div>
+        <div class="channel-card channel-card--info">
+          <span class="channel-name">CREAS / CRAS Campo Grande</span>
+          <span class="channel-desc">Telefones e endereços dos equipamentos de assistência social do território</span>
+          <button class="copy-btn" data-copy="CREAS / CRAS Campo Grande">Copiar informações</button>
+        </div>
+        <div class="channel-card channel-card--info">
+          <span class="channel-name">DPCA — Delegacia de Proteção à Criança e ao Adolescente</span>
+          <span class="channel-desc">Informações de atendimento junto à unidade local</span>
+          <button class="copy-btn" data-copy="DPCA — Delegacia de Proteção à Criança e ao Adolescente">Copiar informações</button>
+        </div>
+      </div>
+      <span class="copy-toast" id="copyToast">Copiado!</span>
+    </div>
+
+    <div class="section-divider"><span></span></div>
+
+    <div class="section-inner">
+      <p class="section-eyebrow section-eyebrow--light">Seção 4 · Bloco 2</p>
+      <h2 class="section-title section-title--light">Sobre a autora &amp; créditos do projeto</h2>
+
+      <div class="author-card">
+        <div class="author-badge">👩‍🏫</div>
+        <div class="author-body">
+          <p class="author-role">Pesquisadora, Pedagoga e Defensora da Proteção Infantil</p>
+          <p class="author-bio">Graduanda em Pedagogia pela UniSão José e Master ESEPAS (Educação Sexual,
+            Emocional e Prevenção ao Abuso Sexual). Atua como pesquisadora no Programa Jovens Cientistas
+            Cariocas, desenvolvendo ações de conscientização e orientação preventiva voltadas a famílias,
+            educadores e comunidades na Nave do Conhecimento de Campo Grande.</p>
+          <p class="author-bio">Acredita que a proteção de crianças e adolescentes não acontece apenas com
+            alertas, mas com informação, diálogo e consciência no dia a dia.</p>
+
+          <div class="author-links">
+            <span class="author-link">📩 Contato profissional: <em>[Seu E-mail]</em></span>
+            <a class="author-link" href="https://instagram.com/brunaschagas" target="_blank" rel="noopener">📷 @brunaschagas</a>
+            <span class="author-link">🌐 Portfólio / LinkedIn: <em>[Seu Link]</em></span>
+          </div>
+
+          <div class="badge-row">
+            <span class="inst-badge">Jovens Cientistas Cariocas</span>
+            <span class="inst-badge">Nave do Conhecimento · Campo Grande</span>
+            <span class="inst-badge">UniSão José</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="disclaimer">Este Web App é um recurso educativo e informativo fruto de pesquisa científica
+        e não substitui o atendimento técnico dos órgãos de saúde, assistência social e segurança pública.</p>
+    </div>
+  </section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
