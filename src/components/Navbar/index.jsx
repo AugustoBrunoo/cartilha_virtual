@@ -9,8 +9,8 @@ export function Navbar() {
   return (
     <header className="navbar" id="navbar">
       <a href="#hero" className="nav-brand">
-        <Shield className="nav-brand-icon" size={20} color="#800020" />
-        Proteção &amp; Diálogo
+        <Shield className="nav-brand-icon" size={20} />
+        <span className="nav-brand-text">Proteção &amp; Diálogo</span>
       </a>
       <nav className={`nav-links ${isOpen ? 'is-open' : ''}`} id="navLinks">
         <a href="#secao1" data-nav="secao1" onClick={() => setIsOpen(false)}>Entenda</a>

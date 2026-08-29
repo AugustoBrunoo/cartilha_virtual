@@ -13,7 +13,17 @@
 }
 
 @keyframes modalFadeIn {
+  from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes modalFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.info-modal-overlay.is-closing {
+  animation: modalFadeOut 0.3s forwards var(--ease);
 }
 
 .info-modal-content {
@@ -30,10 +40,26 @@
   animation: modalSlideUp 0.4s forwards var(--ease);
 }
 
+.info-modal-content.is-closing {
+  animation: modalSlideDown 0.3s forwards var(--ease);
+}
+
 @keyframes modalSlideUp {
-  to { 
-    transform: translateY(0) scale(1); 
-  }
+  from { transform: translateY(20px) scale(0.98); }
+  to { transform: translateY(0) scale(1); }
+}
+
+@keyframes modalSlideDown {
+  from { transform: translateY(0) scale(1); }
+  to { transform: translateY(20px) scale(0.98); }
+}
+
+.info-modal-body-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalFadeIn 0.35s ease;
 }
 
 .info-modal-header {
@@ -431,6 +457,58 @@
     bottom: 24px;
     padding: 0.75em 1.6em;
     font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .info-modal-header {
+    padding: 1.2em;
+  }
+  
+  .info-modal-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .info-modal-body {
+    padding: 1.2em;
+    gap: 1.5em;
+  }
+
+  .info-detail-item {
+    gap: 0.8em;
+  }
+
+  .info-detail-text h4 {
+    font-size: 0.75rem;
+  }
+
+  .info-detail-text p {
+    font-size: 0.85rem;
+  }
+
+  .info-modal-action-btn {
+    padding: 0.7em 1em;
+    font-size: 0.85rem;
+  }
+
+  .choice-card {
+    padding: 1.2em;
+    gap: 1em;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .choice-card-icon {
+    align-self: flex-end;
+    padding: 8px;
+  }
+  
+  .choice-card-content h4 {
+    font-size: 1.05rem;
+  }
+  
+  .choice-card-content p {
+    font-size: 0.85rem;
   }
 }
 

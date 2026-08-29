@@ -121,4 +121,13 @@
     align-items: center;
     text-align: center;
   }
+  
+  .footer-logos {
+    flex-direction: column;
+    gap: 2.5em;
+  }
+  
+  .footer-logo-divider {
+    display: none;
+  }
 }

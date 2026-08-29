@@ -135,7 +135,7 @@ export function Section4() {
                 Graduanda em Pedagogia pela UniSão José e Master ESEPAS (Educação Sexual, Emocional e Prevenção ao Abuso Sexual). Atua como pesquisadora no Programa Jovens Cientistas Cariocas, desenvolvendo ações de conscientização e orientação preventiva voltadas a famílias, educadores e comunidades na Nave do Conhecimento de Campo Grande.
               </p>
 
-              <div className="author-specialty-cards">
+              {/* <div className="author-specialty-cards">
                 <div className="specialty-card">
                   <div className="specialty-icon"><GraduationCap size={22} /></div>
                   <div className="specialty-text">
@@ -150,7 +150,7 @@ export function Section4() {
                     <strong>Jovens Cientistas Cariocas</strong>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="author-social-section">
                 <a href="mailto:brunaschagas@email.com" className="social-btn">

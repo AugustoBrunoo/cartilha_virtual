@@ -30,6 +30,11 @@ export function Section1() {
                   "Relação e ato sexual."
                 ]}
               />
+
+              <div className="compare-divider">
+                <span className="compare-vs" aria-hidden="true">VS</span>
+              </div>
+
               <SpotCard 
                 title="Sexualidade"
                 isAccent={true}
@@ -90,14 +95,15 @@ export function Section1() {
               />
             </div>
 
-            <div className="tag-row">
-              <span className="tag">Intrafamiliar</span>
-              <span className="tag">Extrafamiliar / Institucional / Comunitário</span>
-              <span className="tag">Digital</span>
+            <div className="digital-card" style={{ marginTop: '2.5em', padding: '2em' }}>
+              <p className="digital-subtitle" style={{ marginTop: 0 }}>Contextos da Violência</p>
+              <p style={{ marginBottom: '1.2em' }}>É fundamental entender que a violência pode ocorrer em diferentes ambientes:</p>
+              <ul className="digital-list" style={{ listStyle: 'none', padding: 0 }}>
+                <li><strong>Intrafamiliar:</strong> praticada por membros da própria família ou residentes da casa.</li>
+                <li><strong>Extrafamiliar / Comunitário:</strong> por pessoas conhecidas, figuras de autoridade, líderes, cuidadores ou amigos da família.</li>
+                <li><strong>Digital:</strong> no ambiente cibernético e redes sociais, muitas vezes por meio de perfis falsos ou aliciadores.</li>
+              </ul>
             </div>
-            <p className="tag-caption">Praticado por membros da própria família ou residentes da casa; por pessoas
-              conhecidas, figuras de autoridade, líderes, cuidadores ou amigos da família; ou no ambiente
-              cibernético e redes sociais.</p>
           </div>
 
           {/*  Mitos e realidades  */}

@@ -36,10 +36,27 @@ function MapBoundsFitter({ locations }) {
 }
 
 export function InfoModal({ isOpen, onClose, title, details, choices }) {
+  const [shouldRender, setShouldRender] = useState(isOpen);
+  const [isClosing, setIsClosing] = useState(false);
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [copiedIdx, setCopiedIdx] = useState(null);
   const [toastMessage, setToastMessage] = useState('');
   const toastTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      setShouldRender(true);
+      setIsClosing(false);
+    } else if (shouldRender) {
+      setIsClosing(true);
+      const timer = setTimeout(() => {
+        setShouldRender(false);
+        setIsClosing(false);
+        setSelectedChoice(null); // Reset when fully closed
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen, shouldRender]);
 
   const handleCopy = (text, idx) => {
     navigator.clipboard.writeText(text);
@@ -61,15 +78,13 @@ export function InfoModal({ isOpen, onClose, title, details, choices }) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
-      // Reset choice when closed
-      setSelectedChoice(null);
     }
     return () => {
       document.body.style.overflow = 'auto';
     };
   }, [isOpen]);
 
-  if (!isOpen) return null;
+  if (!shouldRender) return null;
 
   // Determine what to show
   const showChoices = choices && !selectedChoice;
@@ -82,8 +97,8 @@ export function InfoModal({ isOpen, onClose, title, details, choices }) {
   const locations = rawDetails ? (Array.isArray(rawDetails) ? rawDetails : [rawDetails]) : [];
 
   return (
-    <div className="info-modal-overlay" onClick={onClose}>
-      <div className="info-modal-content" onClick={e => e.stopPropagation()}>
+    <div className={`info-modal-overlay ${isClosing ? 'is-closing' : ''}`} onClick={onClose}>
+      <div className={`info-modal-content ${isClosing ? 'is-closing' : ''}`} onClick={e => e.stopPropagation()}>
         <div className="info-modal-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.8em' }}>
             {selectedChoice && (
@@ -98,8 +113,9 @@ export function InfoModal({ isOpen, onClose, title, details, choices }) {
           </button>
         </div>
         
-        {showChoices ? (
-          <div className="info-modal-body" style={{ gridTemplateColumns: '1fr', padding: '2.5em 2em' }}>
+        <div className="info-modal-body-wrapper" key={selectedChoice ? selectedChoice.id : 'choices'}>
+          {showChoices ? (
+            <div className="info-modal-body info-modal-body--choices">
             <p className="info-modal-subtitle">Por favor, escolha qual tipo de unidade você deseja consultar:</p>
             <div className="info-modal-choices">
               {choices.map(choice => (
@@ -269,6 +285,7 @@ export function InfoModal({ isOpen, onClose, title, details, choices }) {
             )}
           </>
         )}
+        </div>
 
         {/* Elegant Floating Toast Notification */}
         <div className={`info-modal-toast ${toastMessage ? 'is-shown' : ''}`} aria-live="polite">

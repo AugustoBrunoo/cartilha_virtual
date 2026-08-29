@@ -14,15 +14,13 @@ export function ChannelInfoCard({ name, description, details, choices }) {
         </button>
       </div>
 
-      {isModalOpen && (
-        <InfoModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          title={name}
-          details={details}
-          choices={choices}
-        />
-      )}
+      <InfoModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={name}
+        details={details}
+        choices={choices}
+      />
     </>
   );
 }
