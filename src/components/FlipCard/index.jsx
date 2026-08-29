@@ -26,7 +26,7 @@ export function FlipCard({ myth, reality, index }) {
         <div className="flip-face flip-front">
           <span className="flip-tag flip-tag--myth">MITO</span>
           <p>{myth}</p>
-          <span className="flip-hint" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontWeight: 'bold', color: '#800020', backgroundColor: '#F6E2E0', padding: '6px 12px', borderRadius: '20px', marginTop: '12px', fontSize: '0.85rem' }}>
+          <span className="flip-hint">
             <MousePointerClick size={16} /> Clique para revelar
           </span>
         </div>

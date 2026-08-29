@@ -1,0 +1,124 @@
+.footer {
+  background: #6B2338;
+  color: #fff;
+  padding: 2.5em 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 10px 20px -10px rgba(0, 0, 0, 0.2);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3em;
+}
+
+.footer-supported,
+.footer-powered {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.footer-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-logos {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  flex-wrap: wrap;
+}
+
+.footer-logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s var(--ease), opacity 0.3s;
+  opacity: 0.8;
+}
+
+.footer-logo-link:hover {
+  transform: translateY(-4px);
+  opacity: 1;
+}
+
+.footer-logo-img {
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-logo-link--nave .footer-logo-img {
+  height: 95px;
+  /* Scaled up significantly */
+  max-width: 250px;
+}
+
+.footer-logo-link--jcc .footer-logo-img {
+  height: 70px;
+  margin-bottom: 40px;
+  /* Ajuste manual para subir a imagem */
+}
+
+.footer-logo-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 0.5em;
+  border-radius: 2px;
+}
+
+/* Noda Brand */
+.noda-brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  text-decoration: none;
+}
+
+.noda-logo-svg {
+  flex-shrink: 0;
+}
+
+.noda-bolt {
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.noda-brand-link:hover .noda-bolt {
+  transform: scale(1.05);
+}
+
+.noda-brand-text {
+  font-weight: 800;
+  font-size: 1.4rem;
+  letter-spacing: -0.03em;
+  color: #fff;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.noda-brand-dot {
+  color: #06B6D4;
+}
+
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 4em;
+  }
+  
+  .footer-supported, .footer-powered {
+    align-items: center;
+    text-align: center;
+  }
+}

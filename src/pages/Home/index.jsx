@@ -6,6 +6,7 @@ import { Section1 } from '../../components/Section1';
 import { Section2 } from '../../components/Section2';
 import { Section3 } from '../../components/Section3';
 import { Section4 } from '../../components/Section4';
+import { Footer } from '../../components/Footer';
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -114,26 +115,40 @@ function Home() {
     /* ---------------- 3D tilt cards ---------------- */
     if (!prefersReduced) {
       document.querySelectorAll('[data-tilt]').forEach(card => {
+        let rect = null;
+        card.addEventListener('mouseenter', () => {
+          rect = card.getBoundingClientRect();
+        });
         card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
+          if (!rect) rect = card.getBoundingClientRect();
           const x = (e.clientX - rect.left) / rect.width - 0.5;
           const y = (e.clientY - rect.top) / rect.height - 0.5;
           card.style.transform = `perspective(700px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateY(-2px)`;
         });
-        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+        card.addEventListener('mouseleave', () => { 
+          card.style.transform = ''; 
+          rect = null;
+        });
       });
     }
 
     /* ---------------- Magnetic buttons ---------------- */
     if (!prefersReduced) {
       document.querySelectorAll('[data-magnetic]').forEach(btn => {
+        let rect = null;
+        btn.addEventListener('mouseenter', () => {
+          rect = btn.getBoundingClientRect();
+        });
         btn.addEventListener('mousemove', (e) => {
-          const rect = btn.getBoundingClientRect();
+          if (!rect) rect = btn.getBoundingClientRect();
           const x = (e.clientX - rect.left - rect.width / 2) * 0.25;
           const y = (e.clientY - rect.top - rect.height / 2) * 0.25;
           btn.style.transform = `translate(${x}px, ${y}px)`;
         });
-        btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+        btn.addEventListener('mouseleave', () => { 
+          btn.style.transform = ''; 
+          rect = null;
+        });
       });
     }
 
@@ -203,6 +218,7 @@ function Home() {
         <Section3 />
         <Section4 />
       </main>
+      <Footer />
     </>
   );
 }
