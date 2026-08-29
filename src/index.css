@@ -166,9 +166,9 @@ button {
   justify-content: space-between;
   padding: .7em 1.4em;
   border-radius: 999px;
-  background: rgba(255, 255, 255, .7);
-  backdrop-filter: blur(14px) saturate(160%);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(127, 46, 69, .08);
   box-shadow: var(--shadow-sm);
 }
@@ -626,9 +626,20 @@ button {
 }
 
 @keyframes pulse-vs {
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(127, 46, 69, 0.4); }
-  50% { transform: scale(1.08); box-shadow: 0 0 0 10px rgba(127, 46, 69, 0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(127, 46, 69, 0); }
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(127, 46, 69, 0.4);
+  }
+
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 10px rgba(127, 46, 69, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(127, 46, 69, 0);
+  }
 }
 
 .spot-card {
@@ -1199,11 +1210,11 @@ button {
     padding: 0;
     gap: 0.6em;
   }
-  
+
   .tab-indicator {
     display: none !important;
   }
-  
+
   .tab-btn {
     width: 100%;
     text-align: center;
@@ -1212,7 +1223,7 @@ button {
     padding: 1em;
     box-shadow: var(--shadow-sm);
   }
-  
+
   .tab-btn.is-active {
     background: var(--primary);
     color: #ffffff;
@@ -1487,10 +1498,12 @@ button {
   .channel-grid {
     grid-template-columns: repeat(6, 1fr);
   }
-  .channel-grid > .channel-card--interactive {
+
+  .channel-grid>.channel-card--interactive {
     grid-column: span 3;
   }
-  .channel-grid > .channel-card--info {
+
+  .channel-grid>.channel-card--info {
     grid-column: span 2;
   }
 }
@@ -1674,6 +1687,9 @@ button {
   color: var(--ink-soft);
   font-size: 1rem;
   line-height: 1.6;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .author-specialty-cards {
