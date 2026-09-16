@@ -25,9 +25,8 @@ export function Section4() {
       {/*  SEÇÃO 4  */}
       <section className="section section--emergency" id="secao4">
         <div className="section-inner">
-          <p className="section-eyebrow section-eyebrow--light">Seção 4 · Bloco 1</p>
           <h2 className="section-title section-title--light">Canais de orientação, atendimento e denúncia</h2>
-          <p className="section-lead section-lead--light">Guarde estes contatos. Em caso de dúvida, ligue — não é
+          <p className="section-lead section-lead--highlight">Guarde estes contatos. Em caso de dúvida, ligue: não é
             preciso ter certeza para pedir orientação.</p>
 
           <div className="channel-grid">
@@ -116,7 +115,6 @@ export function Section4() {
         <div className="section-divider"><span></span></div>
 
         <div className="section-inner">
-          <p className="section-eyebrow section-eyebrow--light">Seção 4 · Bloco 2</p>
           <h2 className="section-title section-title--light">Sobre a autora &amp; créditos do projeto</h2>
 
           <div className="author-card">

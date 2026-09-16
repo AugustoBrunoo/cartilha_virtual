@@ -1,11 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export function BodyGame() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
+  // Handle body overflow lock and Escape key for modal
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') closeModal();
+    };
+    if (isModalOpen) {
+      document.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [isModalOpen]);
+
+  const handleZoneKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openModal();
+    }
+  };
+
   return (
     <>
-      <p className="game-instructions">Toque nas áreas destacadas da ilustração para saber o que é uma área privada.</p>
       <div className="body-game" id="bodyGame">
-        <svg viewBox="0 0 240 380" className="body-figure" aria-hidden="true" style={{ overflow: 'visible' }}>
+        <p className="game-instructions">Toque nas áreas destacadas da ilustração para saber o que é uma área privada.</p>
+      <svg viewBox="0 0 240 380" className="body-figure" aria-hidden="true" style={{ overflow: 'visible' }}>
           <defs>
             <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
               <feDropShadow dx="0" dy="4" stdDeviation="5" floodColor="#000" floodOpacity="0.08" />
@@ -68,20 +97,30 @@ export function BodyGame() {
           </style>
 
           {/* Zonas Interativas (Circundando as áreas) */}
-          <g className="zone zone--private" data-zone="mouth" tabIndex="0" role="button" aria-label="Área privada: boca">
+          <g className="zone zone--private" data-zone="mouth" tabIndex="0" role="button" aria-label="Área privada: boca" onClick={openModal} onKeyDown={handleZoneKeyDown}>
             <ellipse cx="120" cy="62" rx="18" ry="12" className="zone-indicator" style={{ transformOrigin: '120px 62px' }} />
           </g>
-          <g className="zone zone--private" data-zone="chest" tabIndex="0" role="button" aria-label="Área privada: peito">
+          <g className="zone zone--private" data-zone="chest" tabIndex="0" role="button" aria-label="Área privada: peito" onClick={openModal} onKeyDown={handleZoneKeyDown}>
             <rect x="80" y="120" width="80" height="40" rx="16" className="zone-indicator" style={{ transformOrigin: '120px 140px' }} />
           </g>
-          <g className="zone zone--private" data-zone="genitals" tabIndex="0" role="button" aria-label="Área privada: genitais">
+          <g className="zone zone--private" data-zone="genitals" tabIndex="0" role="button" aria-label="Área privada: genitais" onClick={openModal} onKeyDown={handleZoneKeyDown}>
             <rect x="80" y="180" width="80" height="32" rx="14" className="zone-indicator" style={{ transformOrigin: '120px 196px' }} />
           </g>
-          <g className="zone zone--private" data-zone="back" tabIndex="0" role="button" aria-label="Área privada: nádegas">
+          <g className="zone zone--private" data-zone="back" tabIndex="0" role="button" aria-label="Área privada: nádegas" onClick={openModal} onKeyDown={handleZoneKeyDown}>
             <rect x="80" y="218" width="80" height="28" rx="12" className="zone-indicator" style={{ transformOrigin: '120px 232px' }} />
           </g>
         </svg>
         <p className="game-caption">As áreas em destaque representam partes privadas — clique nelas.</p>
+      </div>
+
+      {/* Body Modal */}
+      <div className={`modal-overlay ${isModalOpen ? 'is-open' : ''}`} role="dialog" aria-modal="true" aria-labelledby="bodyModalTitle" onClick={closeModal}>
+        <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+          <button className="modal-close" aria-label="Fechar" onClick={closeModal}>✕</button>
+          <h3 id="bodyModalTitle">Esta é uma área privada!</h3>
+          <p>Ninguém pode tocar, olhar, fotografar ou pedir para você mostrar, exceto em situações de higiene e cuidados médicos acompanhados pelos pais.</p>
+          <p className="modal-note">Seu corpo, suas fotos e sua intimidade pertencem apenas a você. Ninguém tem o direito de exigir exposição ou toques em troca de afeto, atenção, presentes ou popularidade.</p>
+        </div>
       </div>
     </>
   );

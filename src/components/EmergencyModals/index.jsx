@@ -31,15 +31,7 @@ export function EmergencyModals() {
   </div>
 </div>
 
-{/*  Body-zone info modal  */}
-<div className="modal-overlay" id="bodyModal" role="dialog" aria-modal="true" aria-labelledby="bodyModalTitle">
-  <div className="modal-card">
-    <button className="modal-close" id="bodyModalClose" aria-label="Fechar">✕</button>
-    <h3 id="bodyModalTitle">Esta é uma área privada!</h3>
-    <p>Ninguém pode tocar, olhar, fotografar ou pedir para você mostrar, exceto em situações de higiene e cuidados médicos acompanhados pelos pais.</p>
-    <p className="modal-note">Seu corpo, suas fotos e sua intimidade pertencem apenas a você. Ninguém tem o direito de exigir exposição ou toques em troca de afeto, atenção, presentes ou popularidade.</p>
-  </div>
-</div>
+
 
     </>
   );

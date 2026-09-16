@@ -71,18 +71,9 @@ function Home() {
     emergencyModal.addEventListener('click', (e) => { if (e.target === emergencyModal) closeModal(emergencyModal); });
     emergencySeeMore.addEventListener('click', () => closeModal(emergencyModal));
 
-    /* ---------------- Body privacy-zone modal ---------------- */
-    const bodyModal = document.getElementById('bodyModal');
-    const bodyModalClose = document.getElementById('bodyModalClose');
-    document.querySelectorAll('.zone--private').forEach(zone => {
-      zone.addEventListener('click', () => openModal(bodyModal));
-      zone.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(bodyModal); } });
-    });
-    bodyModalClose.addEventListener('click', () => closeModal(bodyModal));
-    bodyModal.addEventListener('click', (e) => { if (e.target === bodyModal) closeModal(bodyModal); });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') { closeModal(emergencyModal); closeModal(bodyModal); }
+      if (e.key === 'Escape') { closeModal(emergencyModal); }
     });
 
 

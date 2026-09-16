@@ -38,7 +38,7 @@ export function Semaphore() {
           }}
         >
           <span className="semaphore-badge semaphore-badge--red">🔴 Sinal Vermelho — Perigo</span>
-          <h4>Toque inseguro / não permitido</h4>
+          <h4>Toque inseguro = NÃO PERMITIDO</h4>
           <p><strong>O que significa:</strong> toques que geram dor, medo, vergonha ou confusão.</p>
           <p><strong>Exemplos:</strong> pedidos de segredo sobre o próprio corpo, toques em partes íntimas, chantagens para mostrar o corpo ou solicitação de fotos íntimas.</p>
         </div>

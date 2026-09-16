@@ -1,6 +1,6 @@
 import React from 'react';
 import { Hand, EyeOff, Smartphone, MessageCircle } from 'lucide-react';
-import { AccordionItem } from '../AccordionItem';
+import { ConceptModals } from '../ConceptModals';
 import { FlipCard } from '../FlipCard';
 import { ChecklistItem } from '../ChecklistItem';
 import { TiltCard } from '../TiltCard';
@@ -12,7 +12,6 @@ export function Section1() {
       {/*  SEÇÃO 1  */}
       <section className="section" id="secao1">
         <div className="section-inner">
-          <p className="section-eyebrow">Seção 1</p>
           <h2 className="section-title">O que você precisa saber sobre educação sexual preventiva</h2>
 
           {/*  1. Diferença fundamental  */}
@@ -22,7 +21,7 @@ export function Section1() {
             </blockquote>
 
             <div className="compare-grid">
-              <SpotCard 
+              <SpotCard
                 title="Sexo"
                 items={[
                   "Anatomia e órgãos genitais.",
@@ -35,7 +34,7 @@ export function Section1() {
                 <span className="compare-vs" aria-hidden="true">VS</span>
               </div>
 
-              <SpotCard 
+              <SpotCard
                 title="Sexualidade"
                 isAccent={true}
                 items={[
@@ -47,21 +46,10 @@ export function Section1() {
             </div>
           </div>
 
-          {/*  Perguntas e respostas  */}
+          {/*  O que é e o que não é — Modais interativos  */}
           <div className="block">
             <h3 className="block-title">O que é — e o que não é</h3>
-            <div className="accordion" data-accordion>
-              <AccordionItem title="O que é Educação Sexual Preventiva?" defaultExpanded={true}>
-                <p>Ensinar sobre anatomia com nomes corretos, desenvolver a noção de privacidade, ensinar a
-                  dizer “NÃO” a toques desconfortáveis, prevenir violências e construir pontes de confiança
-                  entre os filhos e adultos seguros.</p>
-              </AccordionItem>
-
-              <AccordionItem title="O que não é Educação Sexual Preventiva?">
-                <p>Erotização precoce, exposição a conteúdos inadequados ou antecipação de etapas do
-                  desenvolvimento.</p>
-              </AccordionItem>
-            </div>
+            <ConceptModals />
           </div>
 
           {/*  Formas de abuso  */}
@@ -73,22 +61,22 @@ export function Section1() {
               da vítima.</p>
 
             <div className="tilt-grid">
-              <TiltCard 
+              <TiltCard
                 icon={Hand}
                 title="Abuso com contato físico"
                 description="Toques em partes íntimas, beijos forçados, jogos sexuais ou qualquer prática física não consentida/inadequada."
               />
-              <TiltCard 
+              <TiltCard
                 icon={EyeOff}
                 title="Abuso sem contato físico"
                 description="Exposição à nudez ou pornografia, comentários de teor sexual, voyeurismo e solicitações para envio de fotos/vídeos despidos."
               />
-              <TiltCard 
+              <TiltCard
                 icon={Smartphone}
                 title="Violência e exploração digital (Grooming)"
                 description="Aliciamento online através de redes sociais, jogos virtuais e aplicativos de mensagens para chantagem, extorsão ou obtenção de arquivos íntimos."
               />
-              <TiltCard 
+              <TiltCard
                 icon={MessageCircle}
                 title="Violência emocional e negligência"
                 description="Ameaças, chantagens emocionais (“nosso segredinho”) e isolamento promovido pelo agressor para silenciar a vítima."
