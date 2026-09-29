@@ -1,0 +1,234 @@
+.references-page {
+  min-height: 100vh;
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.ref-nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(253, 250, 248, 0.85); /* var(--surface) equivalent with opacity */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(157, 121, 103, 0.15);
+}
+
+.ref-nav-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.ref-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: opacity 0.2s;
+}
+
+.ref-back-link:hover {
+  opacity: 0.8;
+}
+
+.ref-header {
+  position: relative;
+  padding: 5rem 1.5rem 4rem;
+  text-align: center;
+  overflow: hidden;
+  background: var(--surface);
+  border-bottom: 1px solid rgba(157, 121, 103, 0.1);
+}
+
+.ref-header-bg {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150vw;
+  height: 200%;
+  background: radial-gradient(circle at bottom center, var(--primary-tint) 0%, transparent 60%);
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ref-header-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeUp 0.8s var(--ease) forwards;
+}
+
+.ref-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: #ffffff;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  box-shadow: 0 16px 32px rgba(127, 46, 69, 0.1);
+  margin-bottom: 1.5rem;
+  transform: rotate(-5deg);
+  transition: transform 0.5s var(--ease);
+}
+
+.ref-header:hover .ref-icon-wrapper {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.ref-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--primary);
+  margin: 0 0 1rem;
+  line-height: 1.1;
+}
+
+.ref-subtitle {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 600px;
+}
+
+.ref-main {
+  flex: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  width: 100%;
+}
+
+.ref-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .ref-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem 2rem;
+  }
+}
+
+.ref-section {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(157, 121, 103, 0.08);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s var(--ease);
+}
+
+.ref-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ref-section:hover {
+  box-shadow: 0 16px 40px rgba(127, 46, 69, 0.08);
+  border-color: rgba(127, 46, 69, 0.15);
+  transform: translateY(-4px);
+}
+
+.ref-section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(157, 121, 103, 0.15);
+}
+
+.ref-section-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--primary-tint);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ref-section-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin: 0 0 0.25rem;
+  line-height: 1.2;
+}
+
+.ref-section-subtitle {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.ref-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ref-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.ref-bullet {
+  width: 6px;
+  height: 6px;
+  background: var(--secondary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  top: -2px;
+}
+
+.ref-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.ref-footer {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: var(--surface);
+  border-top: 1px solid rgba(157, 121, 103, 0.15);
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

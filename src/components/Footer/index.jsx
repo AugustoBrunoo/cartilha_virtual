@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import logoNave from '../../assets/logos/Logo-Nave-CG.png';
 import logoJcc from '../../assets/logos/jcc.png';
@@ -21,7 +22,11 @@ export function Footer() {
         </div>
 
         <div className="footer-powered">
-          <span className="footer-label">Desenvolvido por</span>
+          <Link to="/referencias" className="footer-refs-link">
+            Referências Bibliográficas
+          </Link>
+          
+          <span className="footer-label" style={{ marginTop: '1.5rem' }}>Desenvolvido por</span>
           <a href="https://www.nodasolucoes.dev/" className="noda-brand-link group">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="noda-logo-svg">
               <defs>

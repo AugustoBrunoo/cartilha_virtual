@@ -2,7 +2,7 @@ import React from 'react';
 import { Hand, EyeOff, Smartphone, MessageCircle } from 'lucide-react';
 import { ConceptModals } from '../ConceptModals';
 import { FlipCard } from '../FlipCard';
-import { ChecklistItem } from '../ChecklistItem';
+
 import { TiltCard } from '../TiltCard';
 import { SpotCard } from '../SpotCard';
 
@@ -17,7 +17,7 @@ export function Section1() {
           {/*  1. Diferença fundamental  */}
           <div className="block" data-reveal-group>
             <blockquote className="pull-quote" data-reveal>
-              “Educação sexual <strong>NÃO</strong> é sobre ato sexual. É sobre sexualidade, saúde e autoproteção.”
+              “Educação sexual <strong>NÃO</strong> é sobre ato sexual.<br /> É sobre sexualidade, saúde e autoproteção.”
             </blockquote>
 
             <div className="compare-grid">
@@ -127,30 +127,12 @@ export function Section1() {
             <h3 className="block-title">Consentimento, limites e prevenção no dia a dia</h3>
             <p className="block-subtitle">Os pilares do consentimento e dos limites do corpo</p>
             <ol className="pillar-list">
-              <li><span className="pillar-num">1</span><div><strong>Autonomia Corporal:</strong> ensinar desde cedo
-                que o corpo pertence à criança/adolescente (“Meu corpo, meu espaço”).</div></li>
-              <li><span className="pillar-num">2</span><div><strong>Ausência de Coação:</strong> consentimento sob
-                ameaça, manipulação, chantagem ou desigualdade de autoridade nunca é válido.</div></li>
-              <li><span className="pillar-num">3</span><div><strong>Consentimento Contínuo e Revogável:</strong>
-                dizer “sim” uma vez não significa autorização permanente; a pessoa tem o direito de mudar de
-                ideia a qualquer momento.</div></li>
-              <li><span className="pillar-num">4</span><div><strong>Capacidade de Compreensão:</strong> menores de
-                14 anos não possuem capacidade legal e maturidade emocional para consentir atos sexuais perante
-                a lei.</div></li>
+              <li><span className="pillar-num">1</span><div><strong>Idade e capacidade:</strong> A idade mínima de consentimento é 14 anos (conforme o Código Penal). Mesmo após essa idade, é necessário avaliar a maturidade emocional e psicológica do adolescente para compreender as consequências de suas escolhas.</div></li>
+              <li><span className="pillar-num">2</span><div><strong>Autonomia e liberdade:</strong> O consentimento deve ser dado explicitamente, sem coerção, manipulação, chantagem, intimidação ou desigualdade de autoridade.</div></li>
+              <li><span className="pillar-num">3</span><div><strong>Contínuo:</strong> O consentimento não é algo que, uma vez dado, permanece para sempre. Não é autorização permanente. Pode ser revogado a qualquer momento ao longo do ato por qualquer uma das partes.</div></li>
             </ol>
 
-            <p className="block-subtitle">Checklist familiar — como aplicar a prevenção na rotina</p>
-            <ul className="checklist">
-              <ChecklistItem index={0}>
-                <strong>Nomes reais para o corpo:</strong> nomeie as partes íntimas com clareza anatomicamente correta (sem apelidos pejorativos), permitindo relatos precisos caso algo aconteça.
-              </ChecklistItem>
-              <ChecklistItem index={1}>
-                <strong>Respeite a vontade do seu filho:</strong> não force crianças ou adolescentes a abraçarem ou beijarem parentes/conhecidos contra a vontade. Ensine que o afeto é voluntário.
-              </ChecklistItem>
-              <ChecklistItem index={2}>
-                <strong>Construa um ambiente de acolhimento:</strong> garanta que seu filho saiba que pode contar qualquer assunto sem medo de ser punido, julgado ou desacreditado.
-              </ChecklistItem>
-            </ul>
+
           </div>
         </div>
       </section>
