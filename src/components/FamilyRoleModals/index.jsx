@@ -107,7 +107,7 @@ export function FamilyRoleModals() {
                 </div>
                 <div className="reading-trigger-text">
                   <h4 className="reading-card-title">{card.title}</h4>
-                  <p className="reading-card-subtitle">{card.subtitle}</p>
+                  {/* <p className="reading-card-subtitle">{card.subtitle}</p> */}
                 </div>
               </div>
             </button>
@@ -141,7 +141,7 @@ export function FamilyRoleModals() {
                     </div>
                     <div>
                       <h3 className="reading-modal-title">{card.title}</h3>
-                      <p className="reading-modal-subtitle">{card.subtitle}</p>
+                      {/* <p className="reading-modal-subtitle">{card.subtitle}</p> */}
                     </div>
                   </div>
 

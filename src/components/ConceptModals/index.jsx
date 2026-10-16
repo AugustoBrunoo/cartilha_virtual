@@ -117,7 +117,7 @@ export function ConceptModals() {
                 </div>
                 <div className="reading-trigger-text">
                   <h4 className="reading-card-title">{card.title}</h4>
-                  <p className="reading-card-subtitle">{card.subtitle}</p>
+                  {/* <p className="reading-card-subtitle">{card.subtitle}</p> */}
                 </div>
               </div>
             </button>
@@ -126,7 +126,7 @@ export function ConceptModals() {
       </div>
 
       {/* Modal Overlay */}
-      <div 
+      <div
         className={`reading-modal-overlay ${activeModal ? 'is-active' : ''}`}
         onClick={closeModal}
         aria-hidden={!activeModal}
@@ -136,17 +136,17 @@ export function ConceptModals() {
           if (!isActive) return null;
 
           const IconComp = card.icon;
-          
+
           return (
-            <div 
+            <div
               key={`modal-${card.id}`}
               className={`reading-modal-content reading-modal-content--${card.id} ${isActive ? 'is-active' : ''}`}
               onClick={(e) => e.stopPropagation()}
               role="dialog"
               aria-modal="true"
             >
-              <button 
-                className="reading-modal-close" 
+              <button
+                className="reading-modal-close"
                 onClick={closeModal}
                 aria-label="Fechar"
               >
@@ -162,7 +162,7 @@ export function ConceptModals() {
                     {card.badge}
                   </span>
                   <h3 className="reading-modal-title">{card.title}</h3>
-                  <p className="reading-modal-subtitle">{card.subtitle}</p>
+                  {/* <p className="reading-modal-subtitle">{card.subtitle}</p> */}
                 </div>
               </div>
 

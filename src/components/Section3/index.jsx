@@ -19,7 +19,7 @@ export function Section3() {
           </p>
 
           <div className="checklist-container" style={{ margin: '2.5rem 0', padding: '2rem', background: 'var(--surface-2)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(157, 121, 103, 0.15)' }}>
-            <h4 className="block-subtitle" style={{ marginTop: 0, color: 'var(--primary)', marginBottom: '1.5rem', fontSize: '1.2rem' }}>Checklist familiar — como aplicar a prevenção na rotina</h4>
+            <h4 className="block-subtitle" style={{ marginTop: 0, color: 'var(--primary)', marginBottom: '1.5rem', fontSize: '1.2rem' }}>Checklist familiar: como aplicar a prevenção na rotina?</h4>
             <ul className="checklist">
               <ChecklistItem index={0}>
                 <strong>Nomes reais para o corpo:</strong> nomeie as partes íntimas com clareza anatomicamente correta (sem apelidos pejorativos), permitindo relatos precisos caso algo aconteça.
@@ -34,7 +34,7 @@ export function Section3() {
           </div>
 
           <div className="interaction-prompt" style={{ textAlign: 'center', marginBottom: '1.5rem', color: 'var(--ink)' }}>
-             <p style={{ fontWeight: 600, fontSize: '1.1rem' }}>Clique nos cartões abaixo para entender melhor como agir no dia a dia:</p>
+            <p style={{ fontWeight: 600, fontSize: '1.1rem' }}>Clique nos cartões abaixo para entender melhor como agir no dia a dia:</p>
           </div>
 
           <FamilyRoleModals />

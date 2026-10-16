@@ -544,6 +544,115 @@ button {
   font-weight: 400;
 }
 
+/* ============================================================
+   TITLE → BLOCK CONNECTOR (seta curva)
+============================================================ */
+.section-title:has(+ .title-connector) {
+  margin-bottom: .55em;
+}
+
+.title-connector {
+  position: relative;
+  height: clamp(70px, 10vw, 100px);
+  margin-bottom: .9em;
+  pointer-events: none;
+}
+
+.title-connector__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.title-connector__path {
+  fill: none;
+  stroke: var(--primary-light);
+  stroke-width: 1.75px;
+  stroke-linecap: round;
+  stroke-dasharray: .012 .014;
+  vector-effect: non-scaling-stroke;
+  opacity: .75;
+}
+
+/* Ponto de partida, logo abaixo do título */
+.title-connector__dot {
+  position: absolute;
+  top: 0;
+  left: 2.4%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 0 5px rgba(127, 46, 69, .08);
+  transform: translate(-50%, -50%);
+}
+
+/* Ponta da seta, centralizada sobre a citação */
+.title-connector__head {
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 11px;
+  height: 11px;
+  border-right: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
+  border-bottom-right-radius: 2px;
+  transform: translateX(-50%) rotate(45deg);
+  animation: title-connector-bob 2.4s var(--ease) infinite;
+}
+
+@keyframes title-connector-bob {
+
+  0%,
+  100% {
+    transform: translate(-50%, 0) rotate(45deg);
+  }
+
+  50% {
+    transform: translate(-50%, 4px) rotate(45deg);
+  }
+}
+
+/* Desenha a linha conforme a rolagem (navegadores com suporte) */
+@supports (animation-timeline: view()) {
+  .title-connector__path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: title-connector-draw linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 45%;
+  }
+
+  .title-connector__head {
+    animation:
+      title-connector-head-in linear both,
+      title-connector-bob 2.4s var(--ease) infinite;
+    animation-timeline: view(), auto;
+    animation-range: entry 20% cover 45%, normal;
+  }
+}
+
+@keyframes title-connector-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes title-connector-head-in {
+
+  0%,
+  85% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .section-lead {
   max-width: 620px;
   margin-bottom: 2em;
@@ -573,6 +682,34 @@ button {
 .block-title {
   font-size: 1.5rem;
   margin-bottom: .8em;
+}
+
+/* ============================================================
+   CONCEPT TITLE VERTICAL (O QUE É / VS / O QUE NÃO É)
+============================================================ */
+.concept-vs-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.35em;
+  margin: 0 auto 2.4em;
+  max-width: 600px;
+}
+
+.concept-vs-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+}
+
+.concept-vs-circle {
+  margin: 0.25em 0;
+  flex-shrink: 0;
 }
 
 .numbered-title-group {
@@ -623,13 +760,12 @@ button {
 .pull-quote {
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 2.5vw, 1.65rem);
-  font-style: italic;
+  font-style: normal;
   color: var(--primary);
   text-align: center;
   max-width: 680px;
   margin: 0 auto 2.4em;
   padding: 1.2em 1.4em;
-  border-top: 1px solid rgba(127, 46, 69, .15);
   border-bottom: 1px solid rgba(127, 46, 69, .15);
   line-height: 1.45;
 }
@@ -2462,7 +2598,10 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 10%;
+  object-position: center 25%;
+  transform: scale(1.25);
+  transform-origin: center 22%;
+  transition: transform 0.3s var(--ease);
 }
 
 .author-header {

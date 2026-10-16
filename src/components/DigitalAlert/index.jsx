@@ -11,16 +11,16 @@ export function DigitalAlert() {
         <div className="grooming-content">
           <h4 className="grooming-title">O que é Aliciamento Digital (Grooming)?</h4>
           <p className="grooming-text">
-            É a aproximação de adultos mal-intencionados que usam o ambiente virtual (jogos online, redes sociais) 
+            É a aproximação de adultos mal-intencionados que usam o ambiente virtual (jogos online, redes sociais)
             para ganhar a confiança de crianças e adolescentes com o objetivo de obter fotos íntimas ou extorquir a vítima.
           </p>
         </div>
       </div>
 
       <div className="digital-tips-section">
-        <h4 className="digital-tips-title">Dicas de segurança e proteção online</h4>
+
         <div className="digital-tips-grid">
-          
+
           <div className="digital-tip-card">
             <div className="tip-icon-box tip-icon-box--green"><ShieldCheck size={24} /></div>
             <div>

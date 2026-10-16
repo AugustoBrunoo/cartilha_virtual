@@ -14,10 +14,23 @@ export function Section1() {
         <div className="section-inner">
           <h2 className="section-title">O que você precisa saber sobre educação sexual preventiva</h2>
 
+          {/*  Seta conectando o título à "Diferença fundamental"  */}
+          <div className="title-connector" aria-hidden="true">
+            <svg className="title-connector__svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+              <path
+                className="title-connector__path"
+                d="M 24 0 C 24 70, 500 20, 500 96"
+                pathLength="1"
+              />
+            </svg>
+            <span className="title-connector__dot" />
+            <span className="title-connector__head" />
+          </div>
+
           {/*  1. Diferença fundamental  */}
           <div className="block" data-reveal-group>
             <blockquote className="pull-quote" data-reveal>
-              “Educação sexual <strong>NÃO</strong> é sobre ato sexual.<br /> É sobre sexualidade, saúde e autoproteção.”
+              <strong>Educação sexual NÃO é sobre ato sexual.</strong><br /> É sobre sexualidade, saúde e autoproteção.
             </blockquote>
 
             <div className="compare-grid">
@@ -48,14 +61,18 @@ export function Section1() {
 
           {/*  O que é e o que não é — Modais interativos  */}
           <div className="block">
-            <h3 className="block-title">O que é — e o que não é</h3>
+            <h3 className="concept-vs-title">
+              <span className="concept-vs-text">O QUE É</span>
+              <span className="compare-vs concept-vs-circle" aria-label="Versus">VS</span>
+              <span className="concept-vs-text">O QUE NÃO É</span>
+            </h3>
             <ConceptModals />
           </div>
 
           {/*  Formas de abuso  */}
           <div className="block">
-            <h3 className="block-title">Formas de abuso, violência e contextos de risco</h3>
-            <p className="block-lead"><strong>O que é Abuso Sexual Infantil e Juvenil?</strong> Toda ação que utiliza a
+            <h3 className="block-title">FORMAS DE ABUSO, VIOLÊNCIA E CONTEXTOS DE RISCO</h3>
+            <p className="block-lead" style={{ color: 'var(--primary)' }}><strong>O que é Abuso Sexual Infantil e Juvenil?</strong> Toda ação que utiliza a
               vulnerabilidade de uma criança ou adolescente para fins sexuais, presencialmente ou por meios
               eletrônicos, caracterizando sempre uma relação desigual de poder e a exploração do desenvolvimento
               da vítima.</p>
@@ -71,11 +88,11 @@ export function Section1() {
                 title="Abuso sem contato físico"
                 description="Exposição à nudez ou pornografia, comentários de teor sexual, voyeurismo e solicitações para envio de fotos/vídeos despidos."
               />
-              <TiltCard
+              {/* <TiltCard
                 icon={Smartphone}
                 title="Violência e exploração digital (Grooming)"
                 description="Aliciamento online através de redes sociais, jogos virtuais e aplicativos de mensagens para chantagem, extorsão ou obtenção de arquivos íntimos."
-              />
+              /> */}
               <TiltCard
                 icon={MessageCircle}
                 title="Violência emocional e negligência"
@@ -84,19 +101,21 @@ export function Section1() {
             </div>
 
             <div className="digital-card" style={{ marginTop: '2.5em', padding: '2em' }}>
-              <p className="digital-subtitle" style={{ marginTop: 0 }}>Contextos da Violência</p>
+              <p className="digital-subtitle" style={{ marginTop: 0, fontWeight: 'bold', color: 'var(--primary)' }}>Contextos da Violência</p>
               <p style={{ marginBottom: '1.2em' }}>É fundamental entender que a violência pode ocorrer em diferentes ambientes:</p>
               <ul className="digital-list" style={{ listStyle: 'none', padding: 0 }}>
-                <li><strong>Intrafamiliar:</strong> praticada por membros da própria família ou residentes da casa.</li>
-                <li><strong>Extrafamiliar / Comunitário:</strong> por pessoas conhecidas, figuras de autoridade, líderes, cuidadores ou amigos da família.</li>
-                <li><strong>Digital:</strong> no ambiente cibernético e redes sociais, muitas vezes por meio de perfis falsos ou aliciadores.</li>
+                <li><strong>- Intrafamiliar:</strong> praticada por membros da própria família ou residentes da casa.</li>
+                <li><strong>- Extrafamiliar:</strong> por pessoas conhecidas, figuras de autoridade, líderes, cuidadores ou amigos da família.</li>
+                <li><strong>- Digital:</strong> no ambiente cibernético e redes sociais, muitas vezes por meio de perfis falsos ou aliciadores.</li>
               </ul>
             </div>
           </div>
 
+          <div className="block-divider" role="separator" aria-hidden="true" />
+
           {/*  Mitos e realidades  */}
           <div className="block">
-            <h3 className="block-title">Desmistificando a violência: mitos e realidades</h3>
+            <h3 className="block-title">DESMISTIFICANDO A VIOLÊNCIA: MITOS E REALIDADES</h3>
             <p className="block-lead">Clique em cada card para revelar a realidade por trás do mito.</p>
             <div className="flip-grid">
               <FlipCard
@@ -125,7 +144,7 @@ export function Section1() {
           {/*  Pilares do consentimento  */}
           <div className="block">
             <h3 className="block-title">Consentimento, limites e prevenção no dia a dia</h3>
-            <p className="block-subtitle">Os pilares do consentimento e dos limites do corpo</p>
+
             <ol className="pillar-list">
               <li><span className="pillar-num">1</span><div><strong>Idade e capacidade:</strong> A idade mínima de consentimento é 14 anos (conforme o Código Penal). Mesmo após essa idade, é necessário avaliar a maturidade emocional e psicológica do adolescente para compreender as consequências de suas escolhas.</div></li>
               <li><span className="pillar-num">2</span><div><strong>Autonomia e liberdade:</strong> O consentimento deve ser dado explicitamente, sem coerção, manipulação, chantagem, intimidação ou desigualdade de autoridade.</div></li>

@@ -130,7 +130,7 @@ export function Section4() {
 
             <div className="author-body">
               <p className="author-bio">
-                Graduanda em Pedagogia pela UniSão José e Master ESEPAS (Educação Sexual, Emocional e Prevenção ao Abuso Sexual). Atua como pesquisadora no Programa Jovens Cientistas Cariocas, desenvolvendo ações de conscientização e orientação preventiva voltadas a famílias, educadores e comunidades na Nave do Conhecimento de Campo Grande.
+                Graduada em Pedagogia pela UniSão José e Master ESEPAS (Educação Sexual, Emocional e Prevenção ao Abuso Sexual). Atua como pesquisadora no Programa Jovens Cientistas Cariocas, desenvolvendo ações de conscientização e orientação preventiva voltadas a famílias, educadores e comunidades na Nave do Conhecimento de Campo Grande.
               </p>
 
               {/* <div className="author-specialty-cards">
@@ -151,7 +151,7 @@ export function Section4() {
               </div> */}
 
               <div className="author-social-section">
-                <a href="mailto:brunaschagas@email.com" className="social-btn">
+                <a href="mailto:brunasancha15@gmail.com" className="social-btn">
                   <Mail size={18} />
                   <span>Email</span>
                 </a>
@@ -159,7 +159,7 @@ export function Section4() {
                   <InstagramIcon size={18} />
                   <span>Instagram</span>
                 </a>
-                <a href="https://linkedin.com/in/brunaschagas" target="_blank" rel="noopener noreferrer" className="social-btn">
+                <a href="https://www.linkedin.com/in/brunachagas-/" target="_blank" rel="noopener noreferrer" className="social-btn">
                   <LinkedinIcon size={18} />
                   <span>LinkedIn</span>
                 </a>
