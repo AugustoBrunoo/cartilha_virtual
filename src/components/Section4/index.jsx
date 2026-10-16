@@ -124,7 +124,7 @@ export function Section4() {
               </div>
               <div className="author-header">
                 <h3 className="author-name">Bruna Chagas</h3>
-                <p className="author-role">Pesquisadora, Pedagoga e Defensora da Proteção Infantil</p>
+                <p className="author-role">Pedagoga, Pesquisadora e Defensora da Proteção Infantil</p>
               </div>
             </div>
 
