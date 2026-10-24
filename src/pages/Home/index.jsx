@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
   useEffect(() => {
-
+    document.title = 'Proteção, Afeto e Diálogo — Guia de Educação Sexual Preventiva';
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (window.gsap && window.ScrollTrigger) {
       gsap.registerPlugin(ScrollTrigger);

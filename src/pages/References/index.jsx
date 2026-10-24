@@ -7,6 +7,7 @@ export default function References() {
   const containerRef = useRef(null);
 
   useEffect(() => {
+    document.title = 'Referências Bibliográficas — Guia de Educação Sexual Preventiva';
     window.scrollTo(0, 0);
     
     const observer = new IntersectionObserver(
